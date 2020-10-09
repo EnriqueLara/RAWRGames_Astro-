@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\brian\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\brian\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Astro.-375418530.00" t="ExcludeRecursive" />
+    <e p="C:\Users\brian\Desktop\Apps\Astro\Astro" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Joystick Pack" t="Include">
+          <e p="Examples" t="Include">
+            <e p="JoystickPlayerExample.cs" t="Include" />
+            <e p="JoystickSetterExample.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Base" t="Include">
+              <e p="Joystick.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="DynamicJoystickEditor.cs" t="Include" />
+              <e p="FloatingJoystickEditor.cs" t="Include" />
+              <e p="JoystickEditor.cs" t="Include" />
+              <e p="VariableJoystickEditor.cs" t="Include" />
+            </e>
+            <e p="Joysticks" t="Include">
+              <e p="DynamicJoystick.cs" t="Include" />
+              <e p="FixedJoystick.cs" t="Include" />
+              <e p="FloatingJoystick.cs" t="Include" />
+              <e p="VariableJoystick.cs" t="Include" />
+            </e>
+            <e p="JSStatus.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="IngameDebugConsole" t="Include">
+            <e p="Editor" t="Include">
+              <e p="DebugLogManagerEditor.cs" t="Include" />
+            </e>
+            <e p="README.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="CircularBuffer.cs" t="Include" />
+              <e p="ConsoleMethodAttribute.cs" t="Include" />
+              <e p="DebugLogConsole.cs" t="Include" />
+              <e p="DebugLogEntry.cs" t="Include" />
+              <e p="DebugLogIndexList.cs" t="Include" />
+              <e p="DebugLogItem.cs" t="Include" />
+              <e p="DebugLogLogcatListener.cs" t="Include" />
+              <e p="DebugLogManager.cs" t="Include" />
+              <e p="DebugLogPopup.cs" t="Include" />
+              <e p="DebugLogRecycledListView.cs" t="Include" />
+              <e p="DebugsOnScrollListener.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Bullet.cs" t="Include" />
+          <e p="Camera" t="Include">
+            <e p="CameraFollow.cs" t="Include" />
+          </e>
+          <e p="Enemy" t="Include">
+            <e p="EnemyController.cs" t="Include" />
+            <e p="EnemyHealthManager.cs" t="Include" />
+            <e p="EnemyMovementManager.cs" t="Include" />
+          </e>
+          <e p="FindClosestEnemy.cs" t="Include" />
+          <e p="Player" t="Include">
+            <e p="Enums" t="Include">
+              <e p="PlayerStatesEnum.cs" t="Include" />
+            </e>
+            <e p="MovePlayer.cs" t="Include" />
+            <e p="MovePlayerTarget.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
+            <e p="PlayerMovementController.cs" t="Include" />
+            <e p="PlayerStates.cs" t="Include" />
+            <e p="RotatePlayer.cs" t="Include" />
+          </e>
+          <e p="ShootSystem.cs" t="Include" />
+          <e p="WeaponEnums.cs" t="Include" />
+          <e p="WeaponStructs.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Astro.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
