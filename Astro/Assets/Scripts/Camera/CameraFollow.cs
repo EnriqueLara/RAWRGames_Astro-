@@ -23,10 +23,12 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if(shouldFollow)
-        FollowTarget();
+        if (shouldFollow)
+        { 
+            FollowTarget();
+            RotateCameraToTarget(target.position);
+        }
 
-        RotateCameraToTarget(target.position);
     }
     private void FollowTarget()
     {

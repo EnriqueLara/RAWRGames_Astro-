@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private EnemyHealthManager enemyHealthManager;
+    [SerializeField] private HealthManager enemyHealthManager;
     [SerializeField] private EnemyMovementManager enemyMovementManager;
 
 
