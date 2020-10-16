@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PlayerStatesEnum;
+using PlayerStates;
 
 public class ShootSystem : MonoBehaviour
 {
@@ -9,14 +9,14 @@ public class ShootSystem : MonoBehaviour
     public WeaponStructs.WeaponPrefabs weaponPrefabs;
     [SerializeField] private float firstShotTime;
     [SerializeField] private Transform bulletSpawner;
-    [SerializeField] private PlayerStates playerStates;
+    [SerializeField] private PlayerStateMachine playerStates;
 
     private float time;
     
     
     public void Shoot()
     {
-        if(playerStates.GetPlayerCurrentState() == PlayerStatesEnum.playerStates.Shooting)
+        if(playerStates.GetState() == PlayerStates.playerStates.Shooting)
         {
             if(time < CalculateTimeBetweenShots(weaponStats.fireRate))
             {

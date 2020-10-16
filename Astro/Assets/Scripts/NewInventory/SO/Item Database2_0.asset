@@ -1,0 +1,415 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a1aa7b45de686429393288fe9733f7, type: 3}
+  m_Name: Item Database2_0
+  m_EditorClassIdentifier: 
+  items:
+  - itemInfo:
+      itemId: W-1
+      itemName: Weapon1
+      itemType: 3
+      itemRarity: 0
+      itemDescription: 
+    showAllInfo: 1
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 100
+      weaponDamage: 10
+      weaponFireRate: 10
+      weaponCritHitChance: 10
+      weaponCritHitDamage: 10
+      weaponBulletSpeed: 10
+      weaponRange: 10
+      weaponImpact: 10
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 1
+    numOfReqObj: 2
+    requiredObjs:
+    - {x: 1, y: 5}
+    - {x: 2, y: 10}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 21300000, guid: 2d2805bfc8c89e84a8fb25b635b3a6ac, type: 3}
+      itemDropPrefab: {fileID: 5880502414125735212, guid: 1c514a12bbe906f46931570335ffc69f,
+        type: 3}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: E-1
+      itemName: Helmet1
+      itemType: 2
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 1
+    equipmentType: 1
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 10
+      equipmentArmor: 10
+      equipmentOxygenUse: 10
+      equipmentMovementSpeed: 10
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 21300000, guid: 41850cf63b2e1f74e851eca176ff63e1, type: 3}
+      itemDropPrefab: {fileID: 365484133056645149, guid: 1088051e2877bd9409b53777e4c9a0b6,
+        type: 3}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: M-1
+      itemName: Esparto
+      itemType: 1
+      itemRarity: 1
+      itemDescription: "El esparto es un material tipo-textil de tier 1 para desarrollar
+        y \r\nmejorar equipamientos"
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 21300000, guid: 5ab743e7677c9d746ac909f1f3a8091d, type: 3}
+      itemDropPrefab: {fileID: 4050698281532058993, guid: b6ced598960c0714e90ece3faac69fe6,
+        type: 3}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: E-2
+      itemName: Pants1
+      itemType: 2
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 1
+    equipmentType: 4
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 10
+      equipmentHealth: 10
+      equipmentArmor: 2010
+      equipmentOxygenUse: 10
+      equipmentMovementSpeed: 10
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 1
+    numOfReqObj: 1
+    requiredObjs:
+    - {x: 1, y: 5}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 21300000, guid: 3343fdf00ed7f8344bab9e5041c7bc3b, type: 3}
+      itemDropPrefab: {fileID: 0}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: M-2
+      itemName: Impure Iron
+      itemType: 1
+      itemRarity: 1
+      itemDescription: 'El residuo de hierro es un material tipo-hierro de tier 1
+        para
+
+        desarrollar y mejorar armas y equipamientos'
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 21300000, guid: 94f0281526e961745b94b7debfae1f2a, type: 3}
+      itemDropPrefab: {fileID: 0}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: M-3
+      itemName: Impure Copper
+      itemType: 1
+      itemRarity: 1
+      itemDescription: 'El residuo de cobre es un material tipo-cobre de tier 1 para
+
+        desarrollar
+        y mejorar armas y equipamientos'
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 21300000, guid: 382db6ece8b914a42909f3d5931d137f, type: 3}
+      itemDropPrefab: {fileID: 0}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: M-4
+      itemName: Impure Alluminum
+      itemType: 1
+      itemRarity: 1
+      itemDescription: 'El residuo de aluminio es un material tipo-aluminio de tier
+        1 para
+
+        desarrollar y mejorar armas y equipamientos'
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 21300000, guid: f21be4191c4d4c6479abfc25879b3f71, type: 3}
+      itemDropPrefab: {fileID: 0}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: M-5
+      itemName: Amethyst
+      itemType: 1
+      itemRarity: 1
+      itemDescription: 'La amatista es un material tipo-crystal de tier 1 para desadesarrollar
+
+        y
+        mejorar armas y equipamientos'
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 21300000, guid: 265c5003d7471a34fb712b80a971d93b, type: 3}
+      itemDropPrefab: {fileID: 0}
+    scrollPos: {x: 0, y: 0}

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f874f29995d694d46b27169b3414dd1a, type: 3}
+  m_Name: SavedInventoryData
+  m_EditorClassIdentifier: 
+  inventoryLists:
+  - inventoryItemInfo:
+      itemId: M-1
+      itemName: Esparto
+      itemType: 1
+      itemRarity: 1
+      itemDescription: "El esparto es un material tipo-textil de tier 1 para desarrollar
+        y \r\nmejorar equipamientos"
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    savedSlotID: 0
+  - inventoryItemInfo:
+      itemId: E-1
+      itemName: Helmet1
+      itemType: 2
+      itemRarity: 1
+      itemDescription: 
+    equipmentType: 1
+    equipmentStats:
+      equipmentLevel: 10
+      equipmentDurability: 10
+      equipmentHealth: 10
+      equipmentArmor: 10
+      equipmentOxygenUse: 10
+      equipmentMovementSpeed: 5
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    savedSlotID: 1
+  prueba: 6
