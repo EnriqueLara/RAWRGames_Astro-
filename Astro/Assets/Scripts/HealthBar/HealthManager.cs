@@ -23,7 +23,7 @@ public class HealthManager : MonoBehaviour
         currentHealth -= _damage;
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            this.gameObject.SetActive(false);
         }
     }
     public float GetHealth()

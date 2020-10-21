@@ -21,6 +21,8 @@ public class HealthBarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!health) Debug.LogError("no hay health");
+
         if (health.GetHealth() == health.GetMaxHealth()) return;
 
         fillimage.gameObject.SetActive(true);

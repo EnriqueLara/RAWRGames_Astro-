@@ -653,10 +653,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7168252845932638738}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &9061978298808695068
@@ -1386,7 +1386,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9061978299813617833}
-  - component: {fileID: 5132235949070298077}
+  - component: {fileID: 6000362269901623035}
+  - component: {fileID: 8129682977663925606}
   m_Layer: 0
   m_Name: Start_Room (Ship)
   m_TagString: Untagged
@@ -1412,7 +1413,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5132235949070298077
+--- !u!114 &6000362269901623035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1421,12 +1422,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 9061978299813617834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfe7f343f12ab334fb39771ab7b8fd0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 57dd760560a336249a46b53048489e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomData:
+    ID: 0
+    IDString: 
+    transformX: 0
+    transformY: 0
+    transformZ: 0
+    rotationX: 0
+    rotationY: 0
+    rotationZ: 0
+    doorwaysVisibility: 
   doorways:
   - {fileID: 3089375896824428874}
   meshCollider: {fileID: 1842573314951879458}
+--- !u!114 &8129682977663925606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061978299813617834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &9061978300433666550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,6 +2180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DoorWay (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299075830430952608, guid: ce33f160a81a12341938d00b5538ce1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce33f160a81a12341938d00b5538ce1b, type: 3}

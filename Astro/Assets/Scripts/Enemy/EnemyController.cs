@@ -18,4 +18,12 @@ public class EnemyController : MonoBehaviour
     {
         enemyMovementManager.FollowPlayer();
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "PlayerEnemyRange")
+    //    {
+    //        other.gameObject.GetComponent<FindClosestEnemy>().AddEnemy(this);
+    //    }
+    //}
 }

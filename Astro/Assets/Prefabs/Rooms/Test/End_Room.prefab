@@ -1288,10 +1288,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2257620585450601036}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &2997134532955543540
@@ -1941,6 +1941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76ef2b307638fb42996a9ecc4a40029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
+  IDString: 
   doorways:
   - {fileID: 5270392025203637683}
   meshCollider: {fileID: 2493120545565576248}

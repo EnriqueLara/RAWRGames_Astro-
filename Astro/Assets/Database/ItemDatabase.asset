@@ -12,4 +12,249 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a1aa7b45de686429393288fe9733f7, type: 3}
   m_Name: ItemDatabase
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - itemInfo:
+      itemId: LM-1
+      itemName: Start Room Ship
+      itemType: 4
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 0}
+      itemDropPrefab: {fileID: 9061978299813617834, guid: 7d24a2232cd2d5d40a65a09d41877d1d,
+        type: 3}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: LM-2
+      itemName: End Room
+      itemType: 4
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 0}
+      itemDropPrefab: {fileID: 6388837464670865583, guid: 5c6561c7f6d88824b9be34a0a99b6878,
+        type: 3}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: LM-3
+      itemName: Chest Room
+      itemType: 4
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 0}
+      itemDropPrefab: {fileID: 1822031214397013323, guid: ba90a6a39354a324db2a91988609ce8a,
+        type: 3}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: LM-4
+      itemName: Area 1
+      itemType: 4
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 0}
+      itemDropPrefab: {fileID: 2029623484731242773, guid: d24ea7dd38d67a040a53f497f74ce86a,
+        type: 3}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: LM-5
+      itemName: Area 2
+      itemType: 4
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 0}
+      itemDropPrefab: {fileID: 1180802547377247196, guid: 4adeae96b7c5f614c8caf8069da0b42d,
+        type: 3}
+    scrollPos: {x: 0, y: 0}

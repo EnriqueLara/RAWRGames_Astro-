@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2168184276607700015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2423193451926219098}
@@ -794,7 +794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2423193451926219098}
-  - component: {fileID: 7408874607359021923}
+  - component: {fileID: 5446967284461855214}
   m_Layer: 0
   m_Name: Start_Room
   m_TagString: Untagged
@@ -820,7 +820,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7408874607359021923
+--- !u!114 &5446967284461855214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -829,13 +829,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2423193451926219101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfe7f343f12ab334fb39771ab7b8fd0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 57dd760560a336249a46b53048489e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
+  IDString: 
   doorways:
-  - {fileID: 4666253711054713628}
-  - {fileID: 4666253709181160917}
-  meshCollider: {fileID: 4121991666750671100}
+  - {fileID: 3471551661074953388}
+  - {fileID: 3471551661332105829}
+  meshCollider: {fileID: 0}
 --- !u!1 &3997877986361621206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,6 +2043,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4535947854290098940, guid: ce33f160a81a12341938d00b5538ce1b,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5753288743755587652, guid: ce33f160a81a12341938d00b5538ce1b,
         type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -2052,6 +2059,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5956608081507810272, guid: ce33f160a81a12341938d00b5538ce1b,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744962600687140715, guid: ce33f160a81a12341938d00b5538ce1b,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2069,9 +2081,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2423193451900377967}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4666253711054713628 stripped
+--- !u!114 &3471551661074953388 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7016947547190110323, guid: ce33f160a81a12341938d00b5538ce1b,
+  m_CorrespondingSourceObject: {fileID: 1264812535053889475, guid: ce33f160a81a12341938d00b5538ce1b,
     type: 3}
   m_PrefabInstance: {fileID: 2423193451900377967}
   m_PrefabAsset: {fileID: 0}
@@ -2148,6 +2160,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4535947854290098940, guid: ce33f160a81a12341938d00b5538ce1b,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5753288743755587652, guid: ce33f160a81a12341938d00b5538ce1b,
         type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -2159,6 +2176,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5956608081507810272, guid: ce33f160a81a12341938d00b5538ce1b,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744962600687140715, guid: ce33f160a81a12341938d00b5538ce1b,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2176,9 +2198,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2423193453237577126}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4666253709181160917 stripped
+--- !u!114 &3471551661332105829 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7016947547190110323, guid: ce33f160a81a12341938d00b5538ce1b,
+  m_CorrespondingSourceObject: {fileID: 1264812535053889475, guid: ce33f160a81a12341938d00b5538ce1b,
     type: 3}
   m_PrefabInstance: {fileID: 2423193453237577126}
   m_PrefabAsset: {fileID: 0}

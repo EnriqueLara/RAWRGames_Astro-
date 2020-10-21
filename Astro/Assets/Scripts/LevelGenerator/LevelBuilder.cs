@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class LevelBuilder : MonoBehaviour
 {
+    [SerializeField] ModuleSelection mSelection;
+    [SerializeField] LevelSaverLoader levelSaverLoader;
+    [SerializeField] NavMeshGenerator nmGenerator;
+    [SerializeField] EnemySpawner enemySpawner;
     public ChangeScene changeScene;
     public GameObject player;
-    public Room startRoomPrefab;
-    public Room endRoomPrefab;
-    public Room chestRoomPrefab;
+    private GameObject startRoomPrefab;
+    public GameObject endRoomPrefab;
+    public GameObject chestRoomPrefab;
+    public List<GameObject> roomGameObject = new List<GameObject>();
     public List<Room> roomPrefabs = new List<Room>();
 
     [Tooltip("The number of rooms to generate")]
@@ -16,17 +21,20 @@ public class LevelBuilder : MonoBehaviour
 
     public List<Doorway> availableDoorways = new List<Doorway>();
 
-    StartRoom startRoom;
+    Room startRoom;
     EndRoom endRoom;
 
-    [SerializeField]List<Room> placedRooms = new List<Room>();
+    public List<Room> placedRooms = new List<Room>();
 
     LayerMask roomLayerMask;
+
+    public bool levelGenerated;
 
     private void Start()
     {
         roomLayerMask = LayerMask.GetMask("Room");
-        StartCoroutine("GenerateLevel");
+        levelSaverLoader.LoadRoomStatus(ref levelGenerated);
+        if (!levelGenerated) StartCoroutine("GenerateLevel");
     }
     IEnumerator GenerateLevel()
     {
@@ -34,6 +42,14 @@ public class LevelBuilder : MonoBehaviour
         WaitForFixedUpdate interval = new WaitForFixedUpdate();
 
         yield return startup;
+
+
+        //asignar los prefabs a la lista
+        mSelection.SetStartRoomModulePrefabs(ref startRoomPrefab);
+        mSelection.SetEndRoom(ref endRoomPrefab);
+        mSelection.SetChestRoom(ref chestRoomPrefab);
+        mSelection.SetRandomRooms(ref roomGameObject);
+
 
         //place start room
         PlaceStartRoom();
@@ -55,21 +71,54 @@ public class LevelBuilder : MonoBehaviour
         PlaceEndRoom();
         PlaceChestRoom();
 
+        //setHideDoorways
+        SetObjects();
+
         yield return interval;
 
         yield return new WaitForSeconds(3);
 
         player.SetActive(true);
+
+        levelGenerated = true;
+        nmGenerator.BakeNavMesh();
+        enemySpawner.SpawnEnemys();
         //StopAllCoroutines();
+    }
+
+    public void SetObjects()
+    {
+        foreach (Room room in placedRooms)
+        {
+            SetHiddenDoorways(room);
+            SetEnemySpawnPoints(room);
+        }
+    }
+    public void SetHiddenDoorways(Room room)
+    {
+        
+        foreach (Doorway doorway in room.doorways)
+        {
+            room.roomData.doorwaysVisibility.Add(doorway.isActiveAndEnabled);
+        }
+        
+    }
+    public void SetEnemySpawnPoints(Room room)
+    {
+        
+        foreach (GameObject spawnpoint in room.enemySpawnPoints)
+        {
+            enemySpawner.AddSpawnPointToList(spawnpoint);
+        }
+        
     }
 
 
     private void PlaceStartRoom()
     {
-        Debug.Log("StartRoomPlaced");
 
         //instantiate room
-        startRoom = Instantiate(startRoomPrefab) as StartRoom;
+        startRoom = Instantiate(startRoomPrefab).GetComponent<Room>();
         startRoom.transform.parent = this.transform;
 
         //Get doorway list from current room and add them to availableDoorways list
@@ -79,15 +128,17 @@ public class LevelBuilder : MonoBehaviour
         startRoom.transform.position = Vector3.zero;
         startRoom.transform.rotation = Quaternion.identity;
 
+        startRoom.GetComponent<Room>().SetDoorwayVisibilityToArray();
         placedRooms.Add(startRoom);
 
     }
     private void PlaceRandomRoom()
     {
-        
+
 
         //instantiate room from list
-        Room currentRoom = Instantiate(roomPrefabs[Random.Range(0,roomPrefabs.Count)]) as Room;
+        Room currentRoom = Instantiate(roomGameObject[Random.Range(0, roomPrefabs.Count)]).GetComponent<Room>(); 
+        //Room currentRoom = Instantiate(roomPrefabs[Random.Range(0,roomPrefabs.Count)]) as Room;
         currentRoom.transform.parent = this.transform;
 
         List<Doorway> allAvailableDoorways = new List<Doorway>(availableDoorways);
@@ -131,7 +182,6 @@ public class LevelBuilder : MonoBehaviour
                 availableDoorways.Remove(doorway);
 
                 //the room has been placed and can exit the loop
-                Debug.Log("RandomRoomPlaced");
                 break;
             }
             //the room has been placed and can exit the loop
@@ -154,36 +204,7 @@ public class LevelBuilder : MonoBehaviour
             //ResetGenerator();
         }
     }
-    bool CheckRoomOverlap2(Room room)
-    {
-        Vector3 roomPos = room.gameObject.transform.position;
-        Vector3 pt1 = new Vector3(room.roomBounds.center.x - room.roomBounds.extents.x, room.roomBounds.center.y + room.roomBounds.extents.y, room.roomBounds.center.z - room.roomBounds.extents.z);
-        Vector3 pt2 = new Vector3(room.roomBounds.center.x - room.roomBounds.extents.x, room.roomBounds.center.y - room.roomBounds.extents.y, room.roomBounds.center.z + room.roomBounds.extents.z);
-        Vector3 pt3 = new Vector3(room.roomBounds.center.x - room.roomBounds.extents.x, room.roomBounds.center.y + room.roomBounds.extents.y, room.roomBounds.center.z + room.roomBounds.extents.z);
-        Vector3 pt4 = new Vector3(room.roomBounds.center.x + room.roomBounds.extents.x, room.roomBounds.center.y - room.roomBounds.extents.y, room.roomBounds.center.z - room.roomBounds.extents.z);
-        Vector3 pt5 = new Vector3(room.roomBounds.center.x + room.roomBounds.extents.x, room.roomBounds.center.y + room.roomBounds.extents.y, room.roomBounds.center.z - room.roomBounds.extents.z);
-        Vector3 pt6 = new Vector3(room.roomBounds.center.x + room.roomBounds.extents.x, room.roomBounds.center.y - room.roomBounds.extents.y, room.roomBounds.center.z + room.roomBounds.extents.z);
-
-        foreach (Room r in placedRooms)
-        {
-            if (r.roomBounds.Intersects(room.roomBounds) ||
-                r.roomBounds.Contains(roomPos) ||
-                r.roomBounds.Contains(room.roomBounds.min)
-                || r.roomBounds.Contains(room.roomBounds.max)
-                || r.roomBounds.Contains(pt1)
-                || r.roomBounds.Contains(pt2)
-                || r.roomBounds.Contains(pt3)
-                || r.roomBounds.Contains(pt4)
-                || r.roomBounds.Contains(pt5)
-                || r.roomBounds.Contains(pt6))
-            {
-                Debug.LogError("Overlap Detected");
-                return true;
-            }
-        }
-
-        return false;
-    }
+    
     private void PositionRoomAtDoorway(ref Room _room, Doorway _roomDoorway, Doorway _targetDoorway)
     {
         // reset room position and rotation
@@ -234,13 +255,13 @@ public class LevelBuilder : MonoBehaviour
     }
 
 
-
     private void PlaceEndRoom()
     {
 
         //instantiate room from list
-        Room endRoom = Instantiate(endRoomPrefab) as Room;
+        Room endRoom = Instantiate(endRoomPrefab).GetComponent<Room>();
         endRoom.transform.parent = this.transform;
+
         endRoom.gameObject.GetComponent<EndRoomChangeLevel>().SetChangeScene(changeScene);
 
         List<Doorway> allAvailableDoorways = new List<Doorway>(availableDoorways);
@@ -261,7 +282,6 @@ public class LevelBuilder : MonoBehaviour
             roomPlaced = true;
 
 
-            Debug.Log("EndRoomPlaced");
 
 
             doorway.gameObject.SetActive(false);
@@ -274,16 +294,17 @@ public class LevelBuilder : MonoBehaviour
 
         if (!roomPlaced)
         {
-            Debug.Log("EndRoomPlacednotPlaced");
             //Destroy(endRoom.gameObject);
             //ResetGenerator();
         }
+
+        placedRooms.Add(endRoom);
     }
     private void PlaceChestRoom()
     {
 
         //instantiate room from list
-        Room chestRoom = Instantiate(chestRoomPrefab) as Room;
+        Room chestRoom = Instantiate(chestRoomPrefab).GetComponent<Room>();
         chestRoom.transform.parent = this.transform;
 
         List<Doorway> allAvailableDoorways = new List<Doorway>(availableDoorways);
@@ -304,7 +325,6 @@ public class LevelBuilder : MonoBehaviour
             roomPlaced = true;
 
 
-            Debug.Log("EndRoomPlaced");
 
 
             doorway.gameObject.SetActive(false);
@@ -317,10 +337,11 @@ public class LevelBuilder : MonoBehaviour
 
         if (!roomPlaced)
         {
-            Debug.Log("EndRoomPlacednotPlaced");
             //Destroy(endRoom.gameObject);
             //ResetGenerator();
         }
+
+        placedRooms.Add(chestRoom);
     }
     private void ResetGenerator()
     {

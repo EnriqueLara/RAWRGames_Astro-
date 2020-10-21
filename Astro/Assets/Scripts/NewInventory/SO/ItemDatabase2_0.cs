@@ -16,6 +16,7 @@ public class ItemDatabase2_0 : ScriptableObject
         foreach (Item2_0 item in items)
         {
             databaseDictionary.Add(item.itemInfo.itemId, item);
+            Debug.Log("ItemAdded:  " + item.itemInfo.itemId);
         }
     }
     public Item2_0 GetItemWithKey(string _itemId)
