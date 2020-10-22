@@ -3561,6 +3561,7 @@ MonoBehaviour:
   Id: 1
   itemDb: {fileID: 11400000, guid: aa1d9fa3502560040bc0a15853e81469, type: 2}
   room: {fileID: 0}
+  objectToSpawn: {fileID: 0}
 --- !u!4 &1838513178
 Transform:
   m_ObjectHideFlags: 0
@@ -4032,21 +4033,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2165148987447028068, guid: e788195a3303d9340a2ab56902f44436,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2165148987447028068, guid: e788195a3303d9340a2ab56902f44436,
-        type: 3}
-      propertyPath: orthographic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2165148987447028068, guid: e788195a3303d9340a2ab56902f44436,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2165148987447028069, guid: e788195a3303d9340a2ab56902f44436,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4112,16 +4098,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1355513864}
-    - target: {fileID: 2165148987447028074, guid: e788195a3303d9340a2ab56902f44436,
-        type: 3}
-      propertyPath: cameraOffset.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2165148987447028074, guid: e788195a3303d9340a2ab56902f44436,
-        type: 3}
-      propertyPath: cameraOffset.z
-      value: -2.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e788195a3303d9340a2ab56902f44436, type: 3}
 --- !u!1001 &2601395852167334349

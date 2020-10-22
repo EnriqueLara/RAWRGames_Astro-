@@ -258,3 +258,199 @@ MonoBehaviour:
       itemDropPrefab: {fileID: 1180802547377247196, guid: 4adeae96b7c5f614c8caf8069da0b42d,
         type: 3}
     scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: M-1
+      itemName: Esparto
+      itemType: 1
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 0}
+      itemDropPrefab: {fileID: 7678863256871384812, guid: 16da2d144b8d20e45a8044930d8ab340,
+        type: 3}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: M-2
+      itemName: Impure Iron
+      itemType: 1
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 0}
+      itemDropPrefab: {fileID: 6230768557708425630, guid: c6fadaaf0f66b134b85c18711bb98a20,
+        type: 3}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: M-3
+      itemName: Impure Copper
+      itemType: 1
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 0}
+      itemDropPrefab: {fileID: 4547505900517174147, guid: ebbaa969be30e024c80f6fcc3fc214a6,
+        type: 3}
+    scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: M-4
+      itemName: Amethyst
+      itemType: 1
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 0
+    equipmentType: 0
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 0
+      equipmentHealth: 0
+      equipmentArmor: 0
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 0}
+      itemDropPrefab: {fileID: 7648897475909137864, guid: 3ad0e59b6c346da43893e59dc6ca6fe4,
+        type: 3}
+    scrollPos: {x: 0, y: 0}

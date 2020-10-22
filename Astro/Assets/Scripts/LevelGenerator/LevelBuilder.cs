@@ -8,6 +8,10 @@ public class LevelBuilder : MonoBehaviour
     [SerializeField] LevelSaverLoader levelSaverLoader;
     [SerializeField] NavMeshGenerator nmGenerator;
     [SerializeField] EnemySpawner enemySpawner;
+    [SerializeField] ResourceSpawner resourceSpawner;
+
+    [SerializeField] GameObject loadingCanvas;
+
     public ChangeScene changeScene;
     public GameObject player;
     private GameObject startRoomPrefab;
@@ -82,7 +86,10 @@ public class LevelBuilder : MonoBehaviour
 
         levelGenerated = true;
         nmGenerator.BakeNavMesh();
-        enemySpawner.SpawnEnemys();
+        enemySpawner.SpawnEnemies();
+        resourceSpawner.SpawnResource();
+
+        loadingCanvas.SetActive(false);
         //StopAllCoroutines();
     }
 
@@ -92,6 +99,7 @@ public class LevelBuilder : MonoBehaviour
         {
             SetHiddenDoorways(room);
             SetEnemySpawnPoints(room);
+            SetResourceSpawnPoints(room);
         }
     }
     public void SetHiddenDoorways(Room room)
@@ -111,6 +119,13 @@ public class LevelBuilder : MonoBehaviour
             enemySpawner.AddSpawnPointToList(spawnpoint);
         }
         
+    }
+    public void SetResourceSpawnPoints(Room room)
+    {
+        foreach (GameObject spawnpoint in room.resourceSpawnPoints)
+        {
+            resourceSpawner.AddSpawnPointToList(spawnpoint);
+        }
     }
 
 

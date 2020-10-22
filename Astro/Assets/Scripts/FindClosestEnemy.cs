@@ -38,17 +38,23 @@ public class FindClosestEnemy : MonoBehaviour
                 
                 }
             }
-            if (!closestEnemy) return null;
+            if (!closestEnemy)
+            {
+                areThereAnyEnemies = false;
+                return null;
+            }
 
             else if (Vector3.Distance(this.transform.position, closestEnemy.gameObject.transform.position) < playerEnemyRange)
             {
                 return closestEnemy.gameObject.transform;
             }
 
+            areThereAnyEnemies = false;
             return null;
         }
         else
         {
+            areThereAnyEnemies = false;
             return null;
         }
     }

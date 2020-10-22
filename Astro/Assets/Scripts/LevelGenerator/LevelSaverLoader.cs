@@ -8,26 +8,36 @@ public class LevelSaverLoader : MonoBehaviour
     [SerializeField] LevelBuilder lBuilder;
     [SerializeField] NavMeshGenerator nmGenerator;
     [SerializeField] EnemySpawner enemySpawner;
+    [SerializeField] ResourceSpawner resourceSpawner;
 
-    [SerializeField] List<RoomData> levelRooms = new List<RoomData>();
-    [SerializeField] List<RoomData> savedLevelRooms = new List<RoomData>();
-    public bool teststatus;
-    string saveKey;
-    string saveStatuskey;
+    [SerializeField] Transform resourceContainer;
+
+
+    [SerializeField] LevelInfoForSaving levelinfo;
+
+    string SaveLevelInfoKey;
 
     private void Awake()
     {
-        saveKey = "Level" + SceneManager.GetActiveScene().buildIndex.ToString();
-        saveStatuskey = "Status";
-        teststatus = LoadStatus();
+        SaveLevelInfoKey = "LevelInfo" + SceneManager.GetActiveScene().buildIndex.ToString();
+
     }
     private void Start()
     {
         if (LoadStatus())
         {
-            LoadLevelRoomsList();
+            LoadLevelInfo();
+
             InstantiateSavedRooms();
+
             nmGenerator.BakeNavMesh();
+
+            enemySpawner.SetAvailableSpawnPoints();
+            enemySpawner.SpawnEnemies();
+
+            resourceSpawner.SpawnSavedResources(levelinfo.savedResources);
+
+
         }
     }
 
@@ -35,9 +45,26 @@ public class LevelSaverLoader : MonoBehaviour
     {
         DeveloperShortCuts();
     }
+
+    public void SetEnemySpawnPoints(GameObject room)
+    {
+        foreach (GameObject spawnpoint in room.GetComponent<Room>().enemySpawnPoints)
+
+        {
+            enemySpawner.AddSpawnPointToList(spawnpoint);
+        }
+    }
+    public void SetPlacedResources()
+    {
+        levelinfo.savedResources.Clear();
+        foreach (Transform child in resourceContainer)
+        {
+            levelinfo.savedResources.Add(child.GetComponent<ResourceStats>().GetInfo());
+        }
+    }
     public void InstantiateSavedRooms()
     {
-        foreach (RoomData room in savedLevelRooms)
+        foreach (RoomData room in levelinfo.levelRooms)
         {
             if (room.IDString == string.Empty) continue;
 
@@ -49,48 +76,52 @@ public class LevelSaverLoader : MonoBehaviour
             currentRoom.transform.position = new Vector3(room.transformX, room.transformY, room.transformZ);
             currentRoom.transform.rotation = Quaternion.Euler(room.rotationX, room.rotationY, room.rotationZ);
 
+
             for(int i = 0; i <= currentRoom.GetComponent<Room>().doorways.Length - 1; i++)
             {
                 currentRoom.GetComponent<Room>().doorways[i].gameObject.SetActive(room.doorwaysVisibility[i]);
             }
 
+            //lBuilder.placedRooms.Add(currentRoom.GetComponent<Room>());
+
+            SetEnemySpawnPoints(currentRoom);
+
         }
     }
 
-    public void LoadLevelRoomsList()
+    public void LoadLevelInfo()
     {
-        if (SaveLoad.SaveExists(saveKey))
+        levelinfo = SaveLoad.Load<LevelInfoForSaving>(SaveLevelInfoKey);
+    }
+
+    public void SaveLevelInfo()
+    {
+        levelinfo.levelStatus = lBuilder.levelGenerated;
+
+
+        if (!SaveLoad.SaveExists(SaveLevelInfoKey))
         {
-            SetList(SaveLoad.Load<List<RoomData>>(saveKey), ref savedLevelRooms);
+            SetList(lBuilder.placedRooms, ref levelinfo.levelRooms);
         }
-    }
+
+        SetPlacedResources();
 
 
-    public void SaveRoomStatus()
-    {
-        SaveLoad.Save<bool>(lBuilder.levelGenerated, saveStatuskey);
-        Debug.Log("se guardo");
+        Debug.Log("Se Guardo");
+        SaveLoad.Save<LevelInfoForSaving>(levelinfo, SaveLevelInfoKey);
     }
     public bool LoadStatus()
     {
-        if (SaveLoad.SaveExists(saveStatuskey))
-            return SaveLoad.Load<bool>(saveStatuskey);
+        if (SaveLoad.SaveExists(SaveLevelInfoKey))
+            return SaveLoad.Load<LevelInfoForSaving>(SaveLevelInfoKey).levelStatus;
         else Debug.LogError("No hay datos guardados"); return false;
     }
     public void LoadRoomStatus(ref bool status)
     {
-        if (SaveLoad.SaveExists(saveStatuskey))
+        if (SaveLoad.SaveExists(SaveLevelInfoKey))
         {
-            status = SaveLoad.Load<bool>(saveStatuskey);
-            //Debug.Log(SaveLoad.Load<bool>(saveStatuskey).ToString());
+            status = SaveLoad.Load<LevelInfoForSaving>(SaveLevelInfoKey).levelStatus;
         }
-    }
-    public void SaveLevelRoomsList()
-    {
-        Debug.Log("jala");
-        SetList(lBuilder.placedRooms, ref levelRooms);
-
-        SaveLoad.Save<List<RoomData>>(levelRooms,saveKey);
     }
     public void SetList(List<Room> from , ref List<RoomData> to)
     {
@@ -111,16 +142,14 @@ public class LevelSaverLoader : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            SaveRoomStatus();
-            SaveLevelRoomsList();
+            SaveLevelInfo();
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            LoadRoomStatus(ref teststatus);
-            LoadLevelRoomsList();
+            LoadLevelInfo();
         }
         if (Input.GetKeyDown(KeyCode.D)) SaveLoad.DeleteAllSaveFiles();
-        if (Input.GetKeyDown(KeyCode.E)) enemySpawner.SpawnEnemys();
+        if (Input.GetKeyDown(KeyCode.E)) enemySpawner.SpawnEnemies();
     }
 
 
