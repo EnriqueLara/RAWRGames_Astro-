@@ -1,27 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelBuilder : MonoBehaviour
 {
-    [SerializeField] ModuleSelection mSelection;
-    [SerializeField] LevelSaverLoader levelSaverLoader;
-    [SerializeField] NavMeshGenerator nmGenerator;
-    [SerializeField] EnemySpawner enemySpawner;
-    [SerializeField] ResourceSpawner resourceSpawner;
+    ModuleSelection mSelection;
+    LevelSaverLoader levelSaverLoader;
+    NavMeshGenerator nmGenerator;
+    EnemySpawner enemySpawner;
+    ResourceSpawner resourceSpawner;
 
     [SerializeField] GameObject loadingCanvas;
 
     public ChangeScene changeScene;
     public GameObject player;
+
+    [SerializeField] TextMeshProUGUI loadingStatusText; 
+
+
     private GameObject startRoomPrefab;
-    public GameObject endRoomPrefab;
-    public GameObject chestRoomPrefab;
-    public List<GameObject> roomGameObject = new List<GameObject>();
-    public List<Room> roomPrefabs = new List<Room>();
+    private GameObject endRoomPrefab;
+    private GameObject chestRoomPrefab;
 
     [Tooltip("The number of rooms to generate")]
     public Vector2 iterationRange = new Vector2();
+
+    public List<GameObject> roomGameObject = new List<GameObject>();
+    public List<Room> roomPrefabs = new List<Room>();
 
     public List<Doorway> availableDoorways = new List<Doorway>();
 
@@ -33,6 +39,16 @@ public class LevelBuilder : MonoBehaviour
     LayerMask roomLayerMask;
 
     public bool levelGenerated;
+
+    private void Awake()
+    {
+        loadingCanvas.SetActive(true);
+        mSelection = GetComponent<ModuleSelection>();
+        levelSaverLoader = GetComponent<LevelSaverLoader>();
+        nmGenerator = GetComponent<NavMeshGenerator>();
+        enemySpawner = GetComponent<EnemySpawner>();
+        resourceSpawner = GetComponent<ResourceSpawner>();
+    }
 
     private void Start()
     {
@@ -47,6 +63,8 @@ public class LevelBuilder : MonoBehaviour
 
         yield return startup;
 
+        loadingStatusText.text = "Initializing...";
+        yield return new WaitForSeconds(1);
 
         //asignar los prefabs a la lista
         mSelection.SetStartRoomModulePrefabs(ref startRoomPrefab);
@@ -54,6 +72,8 @@ public class LevelBuilder : MonoBehaviour
         mSelection.SetChestRoom(ref chestRoomPrefab);
         mSelection.SetRandomRooms(ref roomGameObject);
 
+        loadingStatusText.text = "Generating Level...";
+        yield return new WaitForSeconds(1);
 
         //place start room
         PlaceStartRoom();
@@ -82,14 +102,26 @@ public class LevelBuilder : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        player.SetActive(true);
 
         levelGenerated = true;
+
+        loadingStatusText.text = "Baking NavMesh...";
+        yield return new WaitForSeconds(1);
+
         nmGenerator.BakeNavMesh();
+
+        loadingStatusText.text = "Generating Enemies...";
+        yield return new WaitForSeconds(1);
+
         enemySpawner.SpawnEnemies();
+
+        loadingStatusText.text = "Generating Resources...";
+        yield return new WaitForSeconds(1);
+
         resourceSpawner.SpawnResource();
 
         loadingCanvas.SetActive(false);
+        player.SetActive(true);
         //StopAllCoroutines();
     }
 

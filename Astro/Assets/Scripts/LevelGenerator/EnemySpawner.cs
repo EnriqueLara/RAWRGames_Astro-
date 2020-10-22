@@ -26,24 +26,15 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemies()
     {
         int e = GetTheNumberOfEnemiesToSpawn();
-
-        for (int i = 0; i <= e; i++)
+        Debug.Log(e);
+        for (int i = 0; i < e; i++)
         {
             var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], GetRandomSpawnPointPos(),Quaternion.identity,container);
             enemy.GetComponent<EnemyMovementManager>().SetTarget(enemiesTarget);
-            //PlaceEnemyAtAvailableSpawnPoint(ref enemy);
             findEnemy.AddEnemy(enemy.GetComponent<EnemyController>());
             
         }
     }
-    //public void PlaceEnemyAtAvailableSpawnPoint(ref GameObject enemy)
-    //{
-    //    var currentSpawnPoint = availableSpawnPoints[Random.Range(0, availableSpawnPoints.Count)];
-    //    Vector3 newPos = currentSpawnPoint.transform.position;
-    //    enemy.transform.position = newPos;
-    //    Debug.Log(currentSpawnPoint.transform.position);
-    //    availableSpawnPoints.Remove(currentSpawnPoint);
-    //}
     public Vector3 GetRandomSpawnPointPos()
     {
         var currentSpawnPoint = availableSpawnPoints[Random.Range(0, availableSpawnPoints.Count)];
@@ -55,7 +46,11 @@ public class EnemySpawner : MonoBehaviour
         if (enemyDensity < 0) enemyDensity = 0;
         if (enemyDensity > 1) enemyDensity = 1;
 
-        return (int)(availableSpawnPoints.Count * enemyDensity);
+
+        float q = (float)spawnPoints.Count * enemyDensity;
+        Debug.Log(q);
+
+        return (int)((float)spawnPoints.Count * enemyDensity);
     }
     public void ClearSpawPointList()
     {
@@ -64,6 +59,7 @@ public class EnemySpawner : MonoBehaviour
     }
     public void SetAvailableSpawnPoints()
     {
+        availableSpawnPoints.Clear();
         foreach (GameObject spawnPoint in spawnPoints)
         {
             availableSpawnPoints.Add(spawnPoint);

@@ -24,7 +24,16 @@ public class RotatePlayer : MonoBehaviour
 
     private void LookAt(Transform _target,float _rotationSpeed)
     {
-        var lookPos = _target.position - transform.position;
+        Vector3 lookPos;
+        if (_target)
+        { 
+            lookPos = _target.position - transform.position;
+        }
+        else
+        {
+            lookPos = transform.position;
+        }
+
         lookPos.y = 0;
         var rotation = Quaternion.LookRotation(lookPos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * _rotationSpeed);

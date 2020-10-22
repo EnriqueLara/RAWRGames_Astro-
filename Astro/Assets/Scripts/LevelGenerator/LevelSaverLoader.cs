@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 public class LevelSaverLoader : MonoBehaviour
 {
     [SerializeField] ItemDatabase2_0 itemDb;
-    [SerializeField] LevelBuilder lBuilder;
-    [SerializeField] NavMeshGenerator nmGenerator;
-    [SerializeField] EnemySpawner enemySpawner;
-    [SerializeField] ResourceSpawner resourceSpawner;
+
+    [SerializeField] TextMeshProUGUI loadingText;
+    [SerializeField] GameObject loadingScreen;
+
+    [SerializeField] GameObject player;
+
+    LevelBuilder lBuilder;
+    NavMeshGenerator nmGenerator;
+    EnemySpawner enemySpawner;
+    ResourceSpawner resourceSpawner;
 
     [SerializeField] Transform resourceContainer;
 
@@ -19,6 +27,11 @@ public class LevelSaverLoader : MonoBehaviour
 
     private void Awake()
     {
+        lBuilder = GetComponent<LevelBuilder>();
+        nmGenerator = GetComponent<NavMeshGenerator>();
+        enemySpawner = GetComponent<EnemySpawner>();
+        resourceSpawner = GetComponent<ResourceSpawner>();
+
         SaveLevelInfoKey = "LevelInfo" + SceneManager.GetActiveScene().buildIndex.ToString();
 
     }
@@ -26,19 +39,36 @@ public class LevelSaverLoader : MonoBehaviour
     {
         if (LoadStatus())
         {
-            LoadLevelInfo();
-
-            InstantiateSavedRooms();
-
-            nmGenerator.BakeNavMesh();
-
-            enemySpawner.SetAvailableSpawnPoints();
-            enemySpawner.SpawnEnemies();
-
-            resourceSpawner.SpawnSavedResources(levelinfo.savedResources);
-
+            StartCoroutine("GenerateLevel");
 
         }
+    }
+
+    private IEnumerator GenerateLevel()
+    {
+        loadingText.text = "Loading Level...";
+        LoadLevelInfo();
+
+        yield return new WaitForSeconds(1);
+        loadingText.text = "Generating Level...";
+        InstantiateSavedRooms();
+
+        yield return new WaitForSeconds(1);
+        loadingText.text = "Baking NavMesh...";
+        nmGenerator.BakeNavMesh();
+
+        yield return new WaitForSeconds(1);
+        loadingText.text = "Generating Enemies...";
+        enemySpawner.SetAvailableSpawnPoints();
+        enemySpawner.SpawnEnemies();
+
+        yield return new WaitForSeconds(1);
+        loadingText.text = "Generating Resource...";
+        resourceSpawner.SpawnSavedResources(levelinfo.savedResources);
+
+
+        loadingScreen.SetActive(false);
+        player.SetActive(true);
     }
 
     private void Update()
