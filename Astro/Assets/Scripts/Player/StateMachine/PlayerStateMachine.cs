@@ -10,7 +10,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     private PlayerMovementController playerMovement;
     [SerializeField] private FindClosestEnemy findEnemy;
-    private Animator playerAnim;
+    [SerializeField] private Animator playerAnim;
     [SerializeField]
     private HealthManager playerStats;
     [SerializeField]
@@ -19,7 +19,6 @@ public class PlayerStateMachine : MonoBehaviour
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovementController>();
-        playerAnim = GetComponent<Animator>();
     }
     private void Update()
     {

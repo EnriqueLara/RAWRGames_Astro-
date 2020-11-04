@@ -18,4 +18,8 @@ public class PlayerMovementController : MonoBehaviour
         rotatePlayer.Rotate(moveTarget,rotationSpeed);
         movePlayer.Move(moveTarget,movementSpeed);
     }
+    public float CalculateSpeed()
+    {
+        return movePlayer.CalculateSpeed();
+    }
 }

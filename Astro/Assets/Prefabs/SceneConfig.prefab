@@ -334,21 +334,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93079561e9231114698ef976bb79ed8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mSelection: {fileID: 7492618447250352580}
-  levelSaverLoader: {fileID: 7492618447250352587}
-  nmGenerator: {fileID: 7492618447250352581}
-  enemySpawner: {fileID: 7492618447250352582}
-  resourceSpawner: {fileID: 937809933869142321}
   loadingCanvas: {fileID: 7492618447414061756}
   changeScene: {fileID: 7492618447491501696}
   player: {fileID: 0}
-  endRoomPrefab: {fileID: 0}
-  chestRoomPrefab: {fileID: 0}
+  loadingStatusText: {fileID: 6415725579572809338}
+  iterationRange: {x: 2, y: 4}
   roomGameObject: []
   roomPrefabs:
   - {fileID: 8693838311645657027, guid: d24ea7dd38d67a040a53f497f74ce86a, type: 3}
   - {fileID: 4065232064925306898, guid: 4adeae96b7c5f614c8caf8069da0b42d, type: 3}
-  iterationRange: {x: 2, y: 4}
   availableDoorways: []
   placedRooms: []
   levelGenerated: 0
@@ -365,10 +359,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDb: {fileID: 11400000, guid: aa1d9fa3502560040bc0a15853e81469, type: 2}
-  lBuilder: {fileID: 7492618447250352585}
-  nmGenerator: {fileID: 7492618447250352581}
-  enemySpawner: {fileID: 7492618447250352582}
-  resourceSpawner: {fileID: 937809933869142321}
+  loadingText: {fileID: 6415725579572809338}
+  loadingScreen: {fileID: 7492618447414061756}
+  player: {fileID: 0}
   resourceContainer: {fileID: 6286535902411363095}
   levelinfo:
     levelRooms: []
@@ -401,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesTarget: {fileID: 0}
   findEnemy: {fileID: 0}
-  enemyDensity: 0.5
+  enemyDensity: 0.4
   container: {fileID: 7492618447763050030}
   enemyPrefabs:
   - {fileID: 3155783294445912960, guid: b62bbfb5d0be53649ad13a3b3abc75a3, type: 3}
