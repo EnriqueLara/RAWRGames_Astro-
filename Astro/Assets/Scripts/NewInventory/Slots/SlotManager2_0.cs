@@ -17,9 +17,17 @@ public class SlotManager2_0 : MonoBehaviour
     [SerializeField]
     private Transform placeToDrop;//para saber donde dropear el item
 
+    private void Awake()
+    {
+        if (GameManager.instance)
+        {
+            GameManager.instance.personalInventoryManager.slotManager = this;
+        }
+        SetNumOfSlots();
+    }
+
     private void Start()
     {
-        SetNumOfSlots();
     }
     private void Update()
     {
@@ -37,7 +45,7 @@ public class SlotManager2_0 : MonoBehaviour
     {
         if (GameManager.instance)
         {
-            if(isStorage)
+            if (isStorage)
             {
                 numOfSlots = sI.numOfSlots;
                 //slots = new Slot2_0[sI.numOfSlots];
@@ -51,6 +59,16 @@ public class SlotManager2_0 : MonoBehaviour
             CreateSlots();
             UpdateInventoryUI();
         }
+
+
+        //prueba, borrar despues
+        else
+        {
+            numOfSlots = 10;
+            slots = new Slot2_0[numOfSlots];
+            CreateSlots();
+            //UpdateInventoryUI();
+        }
     }
     public void CreateSlots()
     {
@@ -59,7 +77,23 @@ public class SlotManager2_0 : MonoBehaviour
             for (int i = 0; i < numOfSlots; i++)
             {
                 slots[i] = Instantiate(slotPrefab, transform).GetComponent<Slot2_0>();
-                if(slots[i])
+                if (slots[i])
+                {
+                    slots[i].slotID = i;
+                    slots[i].SetIsEmpty(true);
+                    slots[i].slotManager = this;
+                }
+            }
+        }
+
+        //prueba, borrar despues
+
+        else
+        { 
+            for (int i = 0; i < numOfSlots; i++)
+            {
+                slots[i] = Instantiate(slotPrefab, transform).GetComponent<Slot2_0>();
+                if (slots[i])
                 {
                     slots[i].slotID = i;
                     slots[i].SetIsEmpty(true);
@@ -88,6 +122,7 @@ public class SlotManager2_0 : MonoBehaviour
 
     public void AddItem(string _itemId, InventoryItem2_0 _item)
     {
+        Debug.LogError("agregado");
         int emptySlotId = GetEmptySlotID();
         if (emptySlotId >= 0)
         {

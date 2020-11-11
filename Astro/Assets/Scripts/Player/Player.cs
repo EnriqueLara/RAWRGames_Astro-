@@ -17,9 +17,9 @@ public class Player : MonoBehaviour
         if(shootSystem) shootSystem.Shoot();
 
 
-        if (isTheMenuPlayer)
-        {
-            animator.SetFloat("Speed", playerMC.CalculateSpeed());
-        }
+        //if (isTheMenuPlayer)
+        //{
+        //    animator.SetFloat("Speed", playerMC.CalculateSpeed());
+        //}
     }
 }

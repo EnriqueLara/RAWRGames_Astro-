@@ -33,7 +33,7 @@ public class PersonalInventory : MonoBehaviour
     private void Update()
     {
 
-        text.text = inventories.prueba.ToString();
+        //text.text = inventories.prueba.ToString();
         
         inventoryCount = inventory.Count;
         //inventoryCount = inventories.inventory.Count;

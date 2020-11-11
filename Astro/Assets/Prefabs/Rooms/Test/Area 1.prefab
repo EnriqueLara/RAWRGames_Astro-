@@ -233,6 +233,8 @@ MonoBehaviour:
   - {fileID: 4262156753104390124}
   - {fileID: 1171598476377563473}
   - {fileID: 5257887536805891714}
+  enemySpawnPointsPos: []
+  resourceSpawnPointsPos: []
 --- !u!1 &2526441762089753727
 GameObject:
   m_ObjectHideFlags: 0
@@ -4704,7 +4706,7 @@ PrefabInstance:
     - target: {fileID: 8533554836199047396, guid: 5c88d8ce604de4a46bd507f403c1425d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8533554836199047396, guid: 5c88d8ce604de4a46bd507f403c1425d,
         type: 3}
@@ -5181,7 +5183,7 @@ PrefabInstance:
     - target: {fileID: 8533554836199047396, guid: 5c88d8ce604de4a46bd507f403c1425d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8533554836199047396, guid: 5c88d8ce604de4a46bd507f403c1425d,
         type: 3}
@@ -5541,7 +5543,7 @@ PrefabInstance:
     - target: {fileID: 8533554836199047396, guid: 5c88d8ce604de4a46bd507f403c1425d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8533554836199047396, guid: 5c88d8ce604de4a46bd507f403c1425d,
         type: 3}

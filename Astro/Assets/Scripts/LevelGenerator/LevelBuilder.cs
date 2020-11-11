@@ -42,6 +42,7 @@ public class LevelBuilder : MonoBehaviour
 
     private void Awake()
     {
+        player.SetActive(false);
         loadingCanvas.SetActive(true);
         mSelection = GetComponent<ModuleSelection>();
         levelSaverLoader = GetComponent<LevelSaverLoader>();

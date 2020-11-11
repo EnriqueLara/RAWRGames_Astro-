@@ -22,4 +22,9 @@ public class PlayerMovementController : MonoBehaviour
     {
         return movePlayer.CalculateSpeed();
     }
+
+    public void RotatePlayerToTarget(Transform _target)
+    {
+        rotatePlayer.Rotate(_target, rotationSpeed);
+    }
 }

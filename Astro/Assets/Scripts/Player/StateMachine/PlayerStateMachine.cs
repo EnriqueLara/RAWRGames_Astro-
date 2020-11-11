@@ -57,6 +57,15 @@ public class PlayerStateMachine : MonoBehaviour
         state = _state;
     }
 
+    public bool CheckIfCanHarvest()
+    {
+        if (!findEnemy.AreEnemies() && !jsStatus.CheckIfJSIsPressed())
+        {
+            return true;
+        }
+        return false;
+    }
+
     //Idle
     private void CheckIfIdle()
     {
