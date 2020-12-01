@@ -413,3 +413,51 @@ MonoBehaviour:
       itemIcon: {fileID: 21300000, guid: 01183ba2956bd0943a1c17e6e01f674a, type: 3}
       itemDropPrefab: {fileID: 0}
     scrollPos: {x: 0, y: 0}
+  - itemInfo:
+      itemId: E-3
+      itemName: Torso1
+      itemType: 2
+      itemRarity: 1
+      itemDescription: 
+    showAllInfo: 0
+    equipmentType: 2
+    equipmentStats:
+      equipmentLevel: 0
+      equipmentDurability: 10
+      equipmentHealth: 10
+      equipmentArmor: 10
+      equipmentOxygenUse: 0
+      equipmentMovementSpeed: 0
+    equipmentPrefab:
+      prefab: {fileID: 0}
+    weaponStats:
+      weaponLevel: 0
+      weaponDurability: 0
+      weaponMaxDurability: 0
+      weaponDamage: 0
+      weaponFireRate: 0
+      weaponCritHitChance: 0
+      weaponCritHitDamage: 0
+      weaponBulletSpeed: 0
+      weaponRange: 0
+      weaponImpact: 0
+    weaponPrefabs:
+      weaponPrefab: {fileID: 0}
+      weaponProjectilePrefab: {fileID: 0}
+    showCraftingMaterials: 0
+    numOfReqObj: 0
+    requiredObjs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    itemUnityFields:
+      itemIcon: {fileID: 21300000, guid: 68760afe8130526469a6cc1fd8452235, type: 3}
+      itemDropPrefab: {fileID: 0}
+    scrollPos: {x: 0, y: 0}

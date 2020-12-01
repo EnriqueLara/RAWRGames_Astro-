@@ -7,8 +7,7 @@ public class PickUpEquipment : MonoBehaviour
     [SerializeField] ItemDatabase2_0 itemDb;
     [SerializeField] Harvest harvest;
     [SerializeField] PickUp pickUp;
-    [SerializeField] int equipmentId;
-    string ID;
+    [SerializeField] string equipmentId;
     [SerializeField] InventoryItem2_0 item = new InventoryItem2_0();
 
 
@@ -16,12 +15,11 @@ public class PickUpEquipment : MonoBehaviour
     private void Start()
     {
 
-        ID = "E-" + equipmentId.ToString();
 
         if(item.inventoryItemInfo.itemId == "")
         {
             //When you drop the item the slotmanager2_0 script assigns the item id so theres no need to assign it again
-            item.inventoryItemInfo.itemId = ID;
+            item.inventoryItemInfo.itemId = equipmentId;
         }
         item.inventoryItemInfo.itemName = itemDb.GetItemWithKey(item.inventoryItemInfo.itemId).itemInfo.itemName;
         item.inventoryItemInfo.itemRarity = itemDb.GetItemWithKey(item.inventoryItemInfo.itemId).itemInfo.itemRarity;
